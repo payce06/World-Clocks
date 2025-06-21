@@ -53,3 +53,25 @@ button:hover {
     margin: 0 0 10px;
     color: #2c3e50;
 }
+
+clock .time {
+    font-size: 24px;
+    font-weight: bold;
+    color: #444;
+}
+
+.clock button {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: #e74c3c;
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.clock button:hover {
+    background: #c0392b;
+}
