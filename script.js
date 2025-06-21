@@ -35,3 +35,26 @@ function createClock(timezone) {
 
     clocks.push({ id, timezone });
 }
+
+function updateClocks() {
+    clocks.forEach(({ id, timezone }) => {
+        const timeEl = document.getElementById(`${id}-time`);
+        if (timeEl) {
+            const now = new Date();
+            const options = {
+                timeZone: timezone,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+            timeEl.textContent = now.toLocaleTimeString('en-US', options);
+        }
+    });
+}
+
+function removeClock(id) {
+    clocks = clocks.filter(clock => clock.id !== id);
+    const el = document.getElementById(id);
+    if(el) el.remove();
+}
