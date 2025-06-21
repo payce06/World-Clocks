@@ -32,3 +32,24 @@ button {
 button:hover {
     background-color: #2980b9;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.clock {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    position: relative;
+}
+
+.clock h2 {
+    margin: 0 0 10px;
+    color: #2c3e50;
+}
