@@ -58,3 +58,22 @@ function removeClock(id) {
     const el = document.getElementById(id);
     if(el) el.remove();
 }
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const tz = timezoneSelect.value;
+    if (tz) createClock(tz);
+});
+
+function populateTimezones() {
+    const timezones = Intl.supportedValuesOf('timeZone'); //ECMAScript 2022+
+    timezones.forEach(tz => {
+        const option = document.createElement('option');
+        option.value = tz;
+        option.textContent = tz;
+        timezoneSelect.appendChild(option);
+    });
+}
+
+populateTimezones();
+defaultTimezones.forEach(tz => createClock(tz));
+setInterval(updateClocks, 1000);
